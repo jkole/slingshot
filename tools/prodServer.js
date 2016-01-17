@@ -5,13 +5,14 @@ var server = express();
 var port = process.env.PORT || 8080;
 var distDir = path.join(__dirname, '../dist');
 
+console.log('DEBUG: Current __dirname=' + __dirname);
 console.log('DEBUG: Setting up server with distDir=' + distDir);
 
 server.use(express.static(distDir));
 
 server.get('/*', function(req, res) {
   console.log('DEBUG: In universal get handler...');
-    res.sendFile(path.join(distDir, 'index.html'));
+  res.sendFile(path.join(distDir, 'index.html'));
 });
 
 server.listen(port, function() {
