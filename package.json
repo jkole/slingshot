@@ -5,8 +5,10 @@
   "scripts": {
     "prestart": "npm run remove-dist",
     "start": "parallelshell \"npm run test:watch\" \"npm run open:src\"",
+    "start:prod": "node tools/build.js && npm run open:prod",
     "open:src": "node tools/srcServer.js",
     "open:dist": "node tools/distServer.js",
+    "open:prod": "node tools/prodServer.js",
     "lint": "eslint src",
     "lint:watch": "watch 'npm run lint' src",
     "clean-dist": "npm run remove-dist && npm run create-dist",
@@ -22,6 +24,7 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "express": "4.13.3",
     "react": "0.14.0",
     "react-dom": "0.14.0",
     "react-redux": "4.0.0",
