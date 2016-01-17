@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "npm run remove-dist",
     "start": "parallelshell \"npm run test:watch\" \"npm run open:src\"",
-    "start:prod": "node tools/build.js && npm run open:prod",
+    "start:prod": "npm run prebuild && node tools/build.js && npm run open:prod",
     "open:src": "node tools/srcServer.js",
     "open:dist": "node tools/distServer.js",
     "open:prod": "node tools/prodServer.js",
