@@ -11,7 +11,7 @@ server.use(express.static(distDir));
 
 server.get('/*', function(req, res) {
   console.log('DEBUG: In universal get handler...');
-    res.sendFile(path.join(distDir, 'index.html');
+    res.sendFile(path.join(distDir, 'index.html'));
 });
 
 server.listen(port, function() {
